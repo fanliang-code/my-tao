@@ -81,6 +81,25 @@
         git checkout -- index.html
         撤销对index.html文件的修改 ，本质是 用git仓库中保存的文件，覆盖工作区中指定的文件
 
+        8 
+        git add . 
+        一次性将所有的新增的和修改过的文件加入暂存区
+
+        9
+        git reset HEAD 要移除的文件名称
+        git reset HEAD . 
+        从暂存区中移除对应的文件
+
+        10 
+        git commit -a -m "描述消息"
+        git标准工作流程是工作区->暂存区->Git仓库 太繁琐 跳过使用暂存区域 工作区->Git仓库
+
+        11
+        从暂存区移除文件的方式有两种
+        （1）从Git仓库和工作区同时移除index.js文件
+            git rm -f index.js
+         (2)只从git仓库中移除index.css ，但保留工作区中的index.css文件
+            git rem --cashed index.css
         -->
 
 
