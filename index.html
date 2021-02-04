@@ -53,8 +53,37 @@
          （1）->（2）->（3）untracked 运行 git add index.html 到staged，staged 运行 git commit -m 到unmodified
 
         (4)目前文件已被git跟踪，并且工作区和GIT仓库中的index.html内容保持一致，修改工作区并查看状态
+        git statue
+        Changes not staged for commit:
+        说明已跟踪的文件的内容发生了变化，但是还没有放到暂存区
+        git status -s
+        已跟踪的文件的内容发生了变化，但是还没有放到暂存区 前面有红色的 M 表示
+
+        （5）已跟踪的文件的内容发生了变化 再次运行 git add命令
+        这个命令是多功能的 1.开始跟踪文件 2 把已跟踪且已修改的文件放到暂存区 3把有冲突的文件标记为已解决状态
+        git add index.html 
+        把已修改的文件放到暂存区
+        git statue
+        Changes to be committed:
+        git status -s
+        前面有绿色的 M 表示
+
+        （6）再次运行git commit -m 将暂存区的文件提交到git仓库
+            git statue
+            On branch master
+            nothing to commit, working tree clean
         
-    -->
+        （3）->（4）->（5）->(6) ->(3)
+        unmodified 通过Edit the file 到 Modified，Modified通过git add index.html 到 staged，
+        staged 通过 git commit -m 到Unmodified
+        
+        (7)撤销对文件的修改
+        git checkout -- index.html
+        撤销对index.html文件的修改 ，本质是 用git仓库中保存的文件，覆盖工作区中指定的文件
+
+        -->
+
+
 </body>
 
 </html>
